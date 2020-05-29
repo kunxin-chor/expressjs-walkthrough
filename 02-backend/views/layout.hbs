@@ -5,6 +5,12 @@
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body>
+    <ul>
+        {{#display_flash flash}}
+            <li>{{this}}<li>
+        {{/display_flash}}
+    </ul>
+
     {{{body}}}
   </body>
 </html>

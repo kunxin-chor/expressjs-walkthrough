@@ -7,8 +7,10 @@
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
+    "cookie-session": "^1.4.0",
     "debug": "~2.6.9",
     "express": "~4.16.1",
+    "flash": "^1.1.0",
     "hbs": "~4.0.4",
     "http-errors": "~1.6.3",
     "mongodb": "^3.5.7",
