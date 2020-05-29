@@ -5,7 +5,7 @@ const mongoUtil = require('../mongoUtil.js');
 /* GET home page. */
 router.get('/', async function(req, res, next) {
   db = mongoUtil.getDb();
-  animals = await db.collections('animals').find({}).toArray();
+  animals = await db.collection('animals').find({}).toArray();
   res.render('index', { animals:animals});
 });
 
@@ -15,7 +15,7 @@ router.get('/animals/add', function(req, res, next) {
 
 router.post('/animals/add', async function(req, res, next){
     db = mongoUtil.getDb();
-    await db.collections('animals').insertOne({
+    await db.collection('animals').insertOne({
         'name': req.body['animal-name'],
         'breed': req.body.breed
     });
