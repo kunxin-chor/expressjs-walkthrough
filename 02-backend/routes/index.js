@@ -19,7 +19,7 @@ router.post('/animals/add', async function(req, res, next){
         'name': req.body['animal-name'],
         'breed': req.body.breed
     });
-    res.json(req.body)
+    res.redirect('/')
 });
 
 
