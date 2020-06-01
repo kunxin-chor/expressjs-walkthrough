@@ -1,6 +1,10 @@
 <h1>Animals</h1>
 <ul>
     {{#each animals}}
-        <li>{{this.name}} ({{this.breed}})
+        <li>
+            {{this.name}} ({{this.breed}}) 
+            <a href="{{url_to_route "animals/checkups" this._id}}">Checkups</a>
+            <a href="{{url_to_route "animals/checkups/add" this._id}}">Add Checkup</a>
+        </li>
     {{/each}}
 </ul>

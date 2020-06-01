@@ -7,6 +7,7 @@ var cookieSession = require('cookie-session')
 const hbs = require('hbs')
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+const url=require("url");
 
 var app = express();
 
@@ -36,6 +37,15 @@ hbs.registerHelper('display_flash', function(flash){
         all.push(message.message);
     }
     return all;
+})
+
+hbs.registerHelper('url_to_route', function( ){
+    let path = arguments[0];
+    console.log(arguments);
+    for (let i=1; i < arguments.length-1    ; i++) {
+        path += "/" + arguments[i]
+    }
+    return path;
 })
 
 mongoUtil.connect(()=>{
